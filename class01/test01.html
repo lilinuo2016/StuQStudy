@@ -1,0 +1,32 @@
+<script src="../build/react.js"></script>
+<script src="../build/react-dom.js"></script>
+<script src="../build/browser.min.js"></script>
+
+<div id="container">
+  <!-- This element's contents will be replaced with your component. -->
+</div>
+<script type="text/babel">
+  var Hello = React.createClass({
+    getInitialState: function(){
+      alert('init');
+      return {
+        opacity: 1.0,
+        fontSize: '12px'
+      };
+    },
+    render: function() {
+      return <div>Hello {this.props.name}</div>;
+    },
+    componentWillMount: function(){
+      alert('will');
+    },
+    componentDidMount: function() {
+      alert('did');
+    }
+  });
+
+  ReactDOM.render(
+  <Hello name="World" />,
+          document.getElementById('container')
+  );
+</script>
