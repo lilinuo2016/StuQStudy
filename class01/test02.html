@@ -1,0 +1,38 @@
+<script src="../build/react.js"></script>
+<script src="../build/react-dom.js"></script>
+<script src="../build/browser.min.js"></script>
+
+<div id="container">
+    <!-- This element's contents will be replaced with your component. -->
+</div>
+
+<script type="text/babel">
+    var Child = React.createClass({
+        componentWillReceiveProps: function () {
+            alert('Child componentWillReceiveProps');
+        },
+        shouldComponentUpdate: function (nextProps, nextState) {
+            alert('Child shouldComponentUpdate');
+            return true;
+        },
+        componentWillUpdate: function () {
+            alert('Child componentWillUpdate');
+        },
+        componentDidUpdate: function () {
+            alert('Child componentDidUpdate');
+        },
+        render: function () {
+            alert('Child render');
+            return null ;
+        }
+    });
+    var Parent = React.createClass({
+        componentDidMount: function () {
+            this.setState({});
+        },
+        render: function () {
+            return <Child />;
+        }
+    });
+    ReactDOM.render(<Parent />, document.getElementById('container'));
+</script>
