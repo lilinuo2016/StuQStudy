@@ -1,13 +1,17 @@
 {
-  "name": "mcore",
+  "name": "nodejsstudy",
   "version": "1.0.2",
-  "description": "a powerful nodejs module, we called be mCore",
+  "description": "a simple nodejs module",
   "main": "b.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lilinuo2016/StuQStudy/tree/master/class02/homework01"
+  },
   "keywords": [
-    "mcore"
+    "nodejsstudy"
   ],
   "author": "lili",
   "license": "ISC"
