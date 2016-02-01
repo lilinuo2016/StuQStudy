@@ -1,6 +1,6 @@
 Homework01
 ===========
-	写一个NPM,发布到 npmjs上
+	写一个npm,发布到npmjs的模块上
 
 Install
 ===========
