@@ -1,13 +1,13 @@
 Homework01
 ===========
-	写一个npm,发布到npmjs的模块上
+	Write a npm module, and publish it to www.npmjs.org
 
 Install
 ===========
 
-	npm install nodejsstudy
+	npm install helloworld-node
 
 How to use
 ===========
 
-	require("nodejsstudy")
+	require("helloworld-node")
