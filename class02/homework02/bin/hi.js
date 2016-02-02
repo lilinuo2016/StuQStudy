@@ -5,11 +5,11 @@
 var program = require('commander');
 
 program
-     .version('0.0.1');//声明hi的版本号
+     .version(require('../package.json').version);//声明hi的版本号
 
 program
-     .command('list')//声明hi下有一个命令叫list
-     .description('list files in current working directory')//给出list这个命令的描述
+    .command('list')//声明hi下有一个命令叫list
+    .description('list files in current working directory')//给出list这个命令的描述
     .option('-a, --all', 'Whether to display hidden files')//设置list这个命令的参数
     .action(function(options) {//list命令的实现体
         var fs = require('fs');
