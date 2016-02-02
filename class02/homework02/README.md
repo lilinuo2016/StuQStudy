@@ -1,6 +1,6 @@
 Homework02
 ===========
-	写一个cli工具，发布到npmjs.org上
+	Write a cli tookit, and publish it to www.npmjs.org
 
 Install
 ===========
