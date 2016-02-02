@@ -1,18 +1,18 @@
 {
-  "name": "ls",
-  "description": "The first cli",
+  "name": "hi",
+  "description": "a simple nodejs cli",
   "version": "1.0.0",
   "keywords": [
     "toolkit",
     "cli",
-    "ls"
+    "hi"
   ],
   "files": [
     "lib",
     "bin"
   ],
   "bin": {
-    "ls": "./bin/ls.js"
+    "hi": "./bin/hi.js"
   },
   "dependencies": {
     "commander": "^2.9.0"
