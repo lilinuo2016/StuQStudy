@@ -1,0 +1,31 @@
+{
+  "name": "ls",
+  "description": "The first cli",
+  "version": "1.0.0",
+  "keywords": [
+    "toolkit",
+    "cli",
+    "ls"
+  ],
+  "files": [
+    "lib",
+    "bin"
+  ],
+  "bin": {
+    "ls": "./bin/ls.js"
+  },
+  "dependencies": {
+    "commander": "^2.9.0"
+  },
+  "devDependencies": {},
+  "scripts": {},
+  "engine-strict": true,
+  "engines": {
+    "node": ">= 0.12"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ]
+}
