@@ -5,9 +5,9 @@ Homework02
 Install
 ===========
 
-	
+	npm install ls-node
 
 How to use
 ===========
 
-	
+	require("ls-node")
