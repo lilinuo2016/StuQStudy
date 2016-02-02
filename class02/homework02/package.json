@@ -1,18 +1,22 @@
 {
-  "name": "hi",
+  "name": "ls-node",
   "description": "a simple nodejs cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "keywords": [
     "toolkit",
     "cli",
-    "hi"
+    "ls-node"
   ],
   "files": [
     "lib",
     "bin"
   ],
   "bin": {
-    "hi": "./bin/hi.js"
+    "ls-node": "./bin/ls-node.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lilinuo2016/StuQStudy/tree/master/class02/homework02"
   },
   "dependencies": {
     "commander": "^2.9.0"
