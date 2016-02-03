@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>test</title>
+</head>
+<body>
+
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+<script src="http://cdn.madebyglutard.com/libs/handlebars.js/2.0.0/handlebars.js"></script>
+
+<div id="div5"></div>
+<script id="entry-template5" type="text/x-handlebars-template">    
+    <div class="post">
+    <h1>By {{fullName author}}</h1>
+    <div class="body">{{body}}</div>
+    
+    <h1>Comments</h1>
+    
+    {{#each comments}}
+    <h2>By {{fullName author}}</h2>
+    <div class="body">{{body}}</div>
+        {{/each}}
+    </div>
+</script>
+<script>
+    var context = {
+        author: {firstName: "Alan", lastName: "Johnson"},
+        body: "I Love Handlebars",
+        comments: [{
+            author: {firstName: "Yehuda", lastName: "Katz"},
+            body: "Me too!"
+        }]
+    };
+    
+    //就是下面这个helper提供了模版中的自定义标签;
+    Handlebars.registerHelper('fullName', function(person) {
+        return person.firstName + " " + person.lastName;
+    });
+    
+    var source   = $("#entry-template5").html();
+    var template = Handlebars.compile(source);
+    var html    = template(context);
+    document.getElementById("div5").innerHTML = html;
+</script>
+
+</body>
+</html>
