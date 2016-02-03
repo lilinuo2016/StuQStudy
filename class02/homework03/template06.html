@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>test</title>
+</head>
+<body>
+
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+<script src="http://cdn.madebyglutard.com/libs/handlebars.js/2.0.0/handlebars.js"></script>
+
+<div id="div6"></div>
+<script id="entry-template6" type="text/x-handlebars-template">    
+    {{#list people}}{{firstName}} {{lastName}}{{/list}}
+</script>
+<script>
+    var context = {
+        people: [
+            {firstName: "Yehuda", lastName: "Katz"},
+            {firstName: "Carl", lastName: "Lerche"},
+            {firstName: "Alan", lastName: "Johnson"}
+        ]
+    };
+    Handlebars.registerHelper('list', function(items, options) {
+        var out = "<ul>";
+    
+        for(var i=0, l=items.length; i<l; i++) {
+            out = out + "<li>" + options.fn(items[i]) + "</li>";
+        }
+    
+        return out + "</ul>";
+    });
+    
+    var source   = $("#entry-template6").html();
+    var template = Handlebars.compile(source);
+    var html    = template(context);
+    document.getElementById("div6").innerHTML = html;
+</script>
+
+</body>
+</html>
