@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>test</title>
+</head>
+<body>
+
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+<script src="http://cdn.madebyglutard.com/libs/handlebars.js/2.0.0/handlebars.js"></script>
+
+<div id="div7"></div>
+<script id="entry-template7" type="text/x-handlebars-template">	
+    {{#if haveIf}}我有If{{else}}我没有If{{/if}};
+  
+    {{#each arr}}
+        <p>{{this.a}} &gt; &gt; <span>this.data</span></p> 
+    {{/each}}
+  
+    {{!迭代这条对象}}
+    {{#each test}}
+        {{!如果满足条件就打印第一个模版， 如果不满足条件就打印第二个模版, helper做的只是对数据进行判断而已}}	
+      {{#inverse}}
+      <p>{{this.direct}}</p>
+    {{else}}
+      <p>inverse:{{this.inverse}}</p>
+    {{/inverse}}
+    {{/each}}
+</script>
+<script>
+    var context = {
+        haveIf : true,
+        arr : [
+            { a : "a" , data : "___a"},
+            { a : "b" , data : "___b"},
+            { a : "c" , data : "___c"}
+        ],
+        test : [
+            {
+                condition : true,
+                direct : "打印dir"
+            },
+            {
+                condition : false,
+                direct : "dir",
+                inverse : "打印inverse"
+            }
+        ]
+    };
+    Handlebars.registerHelper('inverse', function(options) {
+        if( this.condition ) {
+            return options.fn(this);
+        }else{
+            return options.inverse(this);
+        }
+    });
+    var source   = $("#entry-template7").html();
+    var template = Handlebars.compile(source);
+    var html	= template(context);
+    document.getElementById("div7").innerHTML = html;
+</script>
+</body>
+</html>
