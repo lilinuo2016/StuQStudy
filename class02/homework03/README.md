@@ -1,6 +1,6 @@
 Homework02
 ===========
-	实现一个简单的Scalfold脚手架
+	accomplish a simple Scalfold
 
 Install
 ===========
