@@ -11,6 +11,6 @@ Install
 How to use
 ===========
 
-	1)index.js:
+	1)test.js:
 		require("helloworld-node")
-	2)node index.js
+	2)node test.js
