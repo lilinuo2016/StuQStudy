@@ -5,9 +5,12 @@ Homework01
 Install
 ===========
 
-	npm install helloworld-node
+	1)npm init
+	2)npm install helloworld-node --save
 
 How to use
 ===========
 
-	require("helloworld-node")
+	1)index.js:
+		require("helloworld-node")
+	2)node index.js
