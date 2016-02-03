@@ -5,11 +5,9 @@ Homework02
 Install
 ===========
 
-	C:\Users\GH>npm config set prefix "D:\TOOLS-APP\nodejs\node_global"
-	C:\Users\GH>npm install ls-node -g
-	C:\Users\GH>set path=%path%;D:\TOOLS-APP\nodejs\node_global
+	npm install ls-node
 
 How to use
 ===========
 
-	C:\Users\GH>ls-node -h
+	require("ls-node")
