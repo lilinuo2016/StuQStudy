@@ -1,6 +1,6 @@
 Homework02
 ===========
-	accomplish a simple Scalfold
+	Accomplish a simple Scalfold
 
 Install
 ===========
