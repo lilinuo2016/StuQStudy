@@ -5,10 +5,10 @@
 var program = require('commander');
 
 program
-     .version(require('../package.json').version);//声明hi的版本号
+     .version(require('../package.json').version);//声明ls-node的版本号
 
 program
-    .command('list')//声明hi下有一个命令叫list
+    .command('list')//声明ls-node下有一个命令叫list
     .description('list files in current working directory')//给出list这个命令的描述
     .option('-a, --all', 'Whether to display hidden files')//设置list这个命令的参数
     .action(function(options) {//list命令的实现体
