@@ -15,21 +15,21 @@
     <h1>By {{fullName author}}</h1>
     <div class="body">{{body}}</div>
     
-    <h1>Comments</h1>
+    <h1>And</h1>
     
     {{#each comments}}
-    <h2>By {{fullName author}}</h2>
+    <h1>By {{fullName author}}</h1>
     <div class="body">{{body}}</div>
         {{/each}}
     </div>
 </script>
 <script>
     var context = {
-        author: {firstName: "Alan", lastName: "Johnson"},
-        body: "I Love Handlebars",
+        author: {firstName: "王", lastName: "沛"},
+        body: "《ReactJS 实战 —— 知其所以然：React原理解析》",
         comments: [{
-            author: {firstName: "Yehuda", lastName: "Katz"},
-            body: "Me too!"
+            author: {firstName: "桑", lastName: "世龙"},
+            body: "《NodeJS Web 框架演进实践》"
         }]
     };
     
