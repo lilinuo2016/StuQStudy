@@ -1,17 +1,11 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>test</title>
-</head>
-<body>
+﻿<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
 <script src="http://cdn.madebyglutard.com/libs/handlebars.js/2.0.0/handlebars.js"></script>
 
 <div id="div2"></div>
 
-<script id="entry-template1" type="text/x-handlebars-template">    
+<script id="entry-template2" type="text/x-handlebars-template">
     <div class="entry">
         <h1>{{title}}</h1>
         <div class="body">
@@ -21,22 +15,12 @@
 </script>
 
 <script>
-    Handlebars.registerHelper('link', function(text, url) {
-        text = Handlebars.Utils.escapeExpression(text);
-        url  = Handlebars.Utils.escapeExpression(url);
-    
-        var result = '<a href="' + url + '">' + text + '</a>';
-    
-        return new Handlebars.SafeString(result);
-    });
-    var source   = $("#entry-template1").html();
+    var source   = $("#entry-template2").html();
     var template = Handlebars.compile(source);
     var context = {
-        title: "All about <p> Tags",
-        body: "<p>This is a post about <p> tags</p>"
+        title: "标题： <p> NodeJS课堂作业",
+        body: "<p> 1.写一个npm模块，并发布到npmjs.org上 <p> 2.如何去写一个cli工具，并发布到npmjs.org上 <p> 3.如何去写一个Scaffold脚手架</p>"
     };
-    var html    = template(context);
+    var html = template(context);
     document.getElementById("div2").innerHTML = html;
 </script>
-</body>
-</html>
