@@ -14,9 +14,9 @@
 <script>
     var context = {
         items: [
-            {name: "Handlebars", emotion: "love"},
-            {name: "Mustache", emotion: "enjoy"},
-            {name: "Ember", emotion: "want to learn"}
+            {name: "课堂作业一", emotion: "完成了"},
+            {name: "课堂作业二", emotion: "正在做"},
+            {name: "课堂作业三", emotion: "还没有做"}
         ]
     };
 
@@ -25,7 +25,7 @@
         name = Handlebars.escapeExpression(this.name);
 
         return new Handlebars.SafeString(
-            "<button>I agree. I " + emotion + " " + name + "</button>"
+            "<button>我 " + emotion + " " + name + "</button>"
         );
     });
     
