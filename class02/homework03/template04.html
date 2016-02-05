@@ -11,7 +11,7 @@
 
 <div id="div4">
 </div>
-<script id="entry-template3" type="text/x-handlebars-template">    
+<script id="entry-template4" type="text/x-handlebars-template">    
     <div class="entry">
       <h1>{{title}}</h1>
       <h2>By {{author.name}}</h2>
@@ -22,17 +22,17 @@
     </div>
 </script>
 <script>
-    var source   = $("#entry-template3").html();
+    var source = $("#entry-template4").html();
     var template = Handlebars.compile(source);
     var context = {
-      title: "My First Blog Post!",
+      title: "NodeJS课堂作业三",
       author: {
         id: 47,
-        name: "Yehuda Katz"
+        name: "li li"
       },
-      body: "My first post. Wheeeee!"
+      body: "如何去写一个Scaffold脚手架"
     };
-    var html    = template(context);
+    var html = template(context);
     document.getElementById("div4").innerHTML = html;
 </script>
 
