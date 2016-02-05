@@ -8,13 +8,13 @@
     <div class="entry">
         <h1>{{title}}</h1>
         <div class="body">
-           {{body}}
+            {{body}}
         </div>
     </div>
 </script>
 <script>
     //JS代码
-    var source   = $("#entry-template1").html();
+    var source = $("#entry-template1").html();
     var template = Handlebars.compile(source);
   
     var context = {title: "NodeJS课堂作业", body: "作业三!"}
