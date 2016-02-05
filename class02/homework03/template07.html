@@ -1,63 +1,55 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>test</title>
-</head>
-<body>
+﻿<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
 <script src="http://cdn.madebyglutard.com/libs/handlebars.js/2.0.0/handlebars.js"></script>
 
 <div id="div7"></div>
-<script id="entry-template7" type="text/x-handlebars-template">	
-    {{#if haveIf}}我有If{{else}}我没有If{{/if}};
+<script id="entry-template7" type="text/x-handlebars-template">
+    {{#if haveHomework}}我完成了课堂作业{{else}}我没有完成课堂作业{{/if}};
   
     {{#each arr}}
-        <p>{{this.a}} &gt; &gt; <span>this.data</span></p> 
+        <p>{{this.number}} &gt; &gt; <span>{{this.homework}}</span></p> 
     {{/each}}
   
     {{!迭代这条对象}}
     {{#each test}}
-        {{!如果满足条件就打印第一个模版， 如果不满足条件就打印第二个模版, helper做的只是对数据进行判断而已}}	
-      {{#inverse}}
-      <p>{{this.direct}}</p>
-    {{else}}
-      <p>inverse:{{this.inverse}}</p>
-    {{/inverse}}
+        {{!如果满足条件就打印第一个模版， 如果不满足条件就打印第二个模版, helper做的只是对数据进行判断而已}}
+        {{#result}}
+            <p>{{this.result1}}</p>
+        {{else}}
+            <p>inverse:{{this.result2}}</p>
+        {{/result}}
     {{/each}}
 </script>
 <script>
     var context = {
-        haveIf : true,
+        haveHomework : true,
         arr : [
-            { a : "a" , data : "___a"},
-            { a : "b" , data : "___b"},
-            { a : "c" , data : "___c"}
+            { number : "1" , homework : "写一个npm模块，并发布到npmjs.org上"},
+            { number : "2" , homework : "如何去写一个cli工具，并发布到npmjs.org上"},
+            { number : "3" , homework : "如何去写一个Scaffold脚手架"}
         ],
         test : [
             {
                 condition : true,
-                direct : "打印dir"
+                result1 : "作业ok"
             },
             {
                 condition : false,
-                direct : "dir",
-                inverse : "打印inverse"
+                result1 : "-",
+                result2 : "作业not ok"
             }
         ]
     };
-    Handlebars.registerHelper('inverse', function(options) {
+    Handlebars.registerHelper('result', function(options) {
         if( this.condition ) {
             return options.fn(this);
         }else{
             return options.inverse(this);
         }
     });
-    var source   = $("#entry-template7").html();
+    var source = $("#entry-template7").html();
     var template = Handlebars.compile(source);
-    var html	= template(context);
+    var html = template(context);
     document.getElementById("div7").innerHTML = html;
 </script>
-</body>
-</html>
