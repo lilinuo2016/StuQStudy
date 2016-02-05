@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>test</title>
+<title>template01</title>
 </head>
 <body>
 
@@ -10,7 +10,7 @@
 <script src="http://cdn.madebyglutard.com/libs/handlebars.js/2.0.0/handlebars.js"></script>
 
 <div id="div1"></div>
-<script id="entry-template" type="text/x-handlebars-template">	
+<script id="entry-template1" type="text/x-handlebars-template">
     <div class="entry">
         <h1>{{title}}</h1>
         <div class="body">
@@ -20,11 +20,11 @@
 </script>
 <script>
     //JS代码
-    var source   = $("#entry-template").html();
+    var source   = $("#entry-template1").html();
     var template = Handlebars.compile(source);
   
-    var context = {title: "标题", body: "NodeJS课堂作业三!"}
-    var html	= template(context);
+    var context = {title: "NodeJS课堂作业", body: "作业三!"}
+    var html = template(context);
     document.getElementById("div1").innerHTML = html;
 </script>
 
