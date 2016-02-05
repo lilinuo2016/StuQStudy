@@ -6,24 +6,24 @@
 <div id="div4"></div>
 <script id="entry-template4" type="text/x-handlebars-template">    
     <div class="entry">
-      <h1>{{title}}</h1>
-      <h2>By {{author.name}}</h2>
+        <h1>{{title}}</h1>
+        <h2>By {{author.name}}</h2>
     
-      <div class="body">
-        {{body}}
-      </div>
+        <div class="body">
+            {{body}}
+        </div>
     </div>
 </script>
 <script>
     var source = $("#entry-template4").html();
     var template = Handlebars.compile(source);
     var context = {
-      title: "NodeJS课堂作业三",
-      author: {
-        id: 47,
-        name: "li li"
-      },
-      body: "如何去写一个Scaffold脚手架"
+        title: "NodeJS课堂作业三",
+        author: {
+            id: 47,
+            name: "li li"
+        },
+        body: "如何去写一个Scaffold脚手架"
     };
     var html = template(context);
     document.getElementById("div4").innerHTML = html;
