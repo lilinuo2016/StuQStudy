@@ -1,0 +1,14 @@
+{
+  "name": "koa-postgres",
+  "version": "1.0.0",
+  "description": "Build web application with Koa and Postgres",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "lili",
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.0.0-alpha.3"
+  }
+}
