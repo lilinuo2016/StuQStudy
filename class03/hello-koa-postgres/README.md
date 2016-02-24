@@ -5,7 +5,10 @@ Homework03
 Install
 ===========
 
-	
+	Windows:
+		npm install -g nodemon
+		
+	Linux:
 
 How to use
 ===========
@@ -18,3 +21,5 @@ How to use
 		[nodemon] to restart at any time, enter `rs`
 		[nodemon] watching: *.*
 		[nodemon] starting `node server.js`
+		
+	Linux:
