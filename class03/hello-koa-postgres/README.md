@@ -1,4 +1,4 @@
-Homework03
+Homework
 ===========
 	Build web application with Koa and Postgres
 
